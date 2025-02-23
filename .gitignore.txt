@@ -1,0 +1,117 @@
+Last login: Mon Feb 17 19:36:53 on ttys003
+oliver@Mac ~ % cd Trig 
+oliver@Mac Trig % cmake -D CMAKE_CXX_COMPILER=/opt/homebrew/opt/llvm/bin/clang++ -B build
+-- The CXX compiler identification is Clang 19.1.6
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /opt/homebrew/opt/llvm/bin/clang++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done (0.6s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/oliver/Trig/build
+oliver@Mac Trig % cmake -D CMAKE_CXX_COMPILER=/opt/homebrew/opt/llvm/bin/clang++ -B build
+-- Configuring done (0.0s)
+-- Generating done (0.0s)
+-- Build files have been written to: /Users/oliver/Trig/build
+oliver@Mac Trig % cd build 
+oliver@Mac build % make
+[ 50%] Building CXX object CMakeFiles/Trig.dir/Main.cpp.o
+/Users/oliver/Trig/Main.cpp:8:27: error: too many arguments provided to function-like macro invocation
+    8 |   assert(std::acos(0.0f), pi/2);
+      |                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/assert.h:74:9: note: macro 'assert' defined here
+   74 | #define assert(e) \
+      |         ^
+/Users/oliver/Trig/Main.cpp:8:3: error: use of undeclared identifier 'assert'
+    8 |   assert(std::acos(0.0f), pi/2);
+      |   ^
+/Users/oliver/Trig/Main.cpp:9:27: error: too many arguments provided to function-like macro invocation
+    9 |   assert(std::asin(1.0f), pi/2);
+      |                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/assert.h:74:9: note: macro 'assert' defined here
+   74 | #define assert(e) \
+      |         ^
+/Users/oliver/Trig/Main.cpp:9:3: error: use of undeclared identifier 'assert'
+    9 |   assert(std::asin(1.0f), pi/2);
+      |   ^
+4 errors generated.
+make[2]: *** [CMakeFiles/Trig.dir/Main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Trig.dir/all] Error 2
+make: *** [all] Error 2
+oliver@Mac build % make
+[ 50%] Building CXX object CMakeFiles/Trig.dir/Main.cpp.o
+/Users/oliver/Trig/Main.cpp:1:10: fatal error: 'assert' file not found
+    1 | #include <assert>
+      |          ^~~~~~~~
+1 error generated.
+make[2]: *** [CMakeFiles/Trig.dir/Main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Trig.dir/all] Error 2
+make: *** [all] Error 2
+oliver@Mac build % make
+[ 50%] Building CXX object CMakeFiles/Trig.dir/Main.cpp.o
+/Users/oliver/Trig/Main.cpp:8:27: error: too many arguments provided to function-like macro invocation
+    8 |   assert(std::acos(0.0f), pi/2);
+      |                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/assert.h:74:9: note: macro 'assert' defined here
+   74 | #define assert(e) \
+      |         ^
+/Users/oliver/Trig/Main.cpp:8:3: error: use of undeclared identifier 'assert'
+    8 |   assert(std::acos(0.0f), pi/2);
+      |   ^
+/Users/oliver/Trig/Main.cpp:9:27: error: too many arguments provided to function-like macro invocation
+    9 |   assert(std::asin(1.0f), pi/2);
+      |                           ^
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/assert.h:74:9: note: macro 'assert' defined here
+   74 | #define assert(e) \
+      |         ^
+/Users/oliver/Trig/Main.cpp:9:3: error: use of undeclared identifier 'assert'
+    9 |   assert(std::asin(1.0f), pi/2);
+      |   ^
+4 errors generated.
+make[2]: *** [CMakeFiles/Trig.dir/Main.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Trig.dir/all] Error 2
+make: *** [all] Error 2
+oliver@Mac build % make
+[ 50%] Building CXX object CMakeFiles/Trig.dir/Main.cpp.o
+[100%] Linking CXX executable Trig
+[100%] Built target Trig
+oliver@Mac build % ./Trig 
+Assertion failed: (std::asin(1.0f) == pi/2), function main, file Main.cpp, line 9.
+zsh: abort      ./Trig
+oliver@Mac build % cd ..    
+oliver@Mac Trig % cp ../HelloRenderingEngine/.gitignore .
+oliver@Mac Trig % ls -a
+.		.gitignore	CMakeLists.txt~	Main.cpp~
+..		CMakeLists.txt	Main.cpp	build
+oliver@Mac Trig % vi .gitignore
+
+#ignore emacs temporary files
+*~
+
+#ignore Desktop Services Store
+*.DS_Store
+
+#ignore the build directory
+/build
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+
